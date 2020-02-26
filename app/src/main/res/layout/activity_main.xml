@@ -24,13 +24,13 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/edittext_username"
+            android:id="@+id/edittext_email"
             android:layout_width="190dp"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:background="#99FFFFFF"
             android:drawableLeft="@drawable/username"
-            android:hint="@string/username"
+            android:hint="@string/email"
             android:paddingLeft="2dp" />
 
         <EditText
@@ -75,7 +75,8 @@
 
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"

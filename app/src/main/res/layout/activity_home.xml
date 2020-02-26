@@ -79,7 +79,20 @@
         android:textColorLink="#B86DD8"
         android:textSize="24dp"/>
 
-
+    <Button
+        android:id="@+id/button0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mainmenu_logout"
+        android:minWidth="100dp"
+        android:minHeight="40dp"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textColor="#DD2E9C"
+        android:textColorLink="#B86DD8"
+        android:textSize="18sp"
+        android:translationX="-150dp"
+        android:translationY="-600dp" />
 
 
 </LinearLayout>
