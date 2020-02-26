@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/main_background1"
+    tools:context="com.example.tommyscloset.HomeActivity">
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:minWidth="260dp"
+        android:minHeight="80dp"
+        android:textAllCaps="false"
+        android:text="Going out"
+        android:background="@drawable/mainmenu_button"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#B86DD8"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:minWidth="260dp"
+        android:minHeight="80dp"
+        android:textAllCaps="false"
+        android:text="Upload"
+        android:background="@drawable/mainmenu_button"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#B86DD8"
+        android:textSize="24dp"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:minWidth="260dp"
+        android:minHeight="80dp"
+        android:textAllCaps="false"
+        android:text="View all"
+        android:background="@drawable/mainmenu_button"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#B86DD8"
+        android:textSize="24dp"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:minWidth="260dp"
+        android:minHeight="80dp"
+        android:textAllCaps="false"
+        android:text="Laundry"
+        android:background="@drawable/mainmenu_button"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#B86DD8"
+        android:textSize="24dp"/>
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:minWidth="260dp"
+        android:minHeight="80dp"
+        android:textAllCaps="false"
+        android:text="Account"
+        android:background="@drawable/mainmenu_button"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#B86DD8"
+        android:textSize="24dp"/>
+
+
+
+
+</LinearLayout>
