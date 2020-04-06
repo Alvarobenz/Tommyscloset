@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1032793796333",
+    "firebase_url": "https://tommyscloset-2630f.firebaseio.com",
+    "project_id": "tommyscloset-2630f",
+    "storage_bucket": "tommyscloset-2630f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032793796333:android:a4ccddc617fec6073866e4",
+        "android_client_info": {
+          "package_name": "com.example.tommyscloset"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032793796333-gkc5b64nfmt35sj3ivfdmm42jksl5j5a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tommyscloset",
+            "certificate_hash": "1cf049174af1568f4cf2ea28a54026540a3ca8e4"
+          }
+        },
+        {
+          "client_id": "1032793796333-qgmhgdkprksgpao0tsfs6i4jp2fjvomj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCniDS_A-pUv31FOW6_ZkJhvl90NooIz9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032793796333-qgmhgdkprksgpao0tsfs6i4jp2fjvomj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

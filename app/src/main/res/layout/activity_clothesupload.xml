@@ -4,17 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Clothesselect">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#3A3A3A"
+    tools:context=".Clothesupload">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="122dp"
-        android:layout_height="87dp"
-        android:text="Upload Clothing"
-        android:textSize="32sp"
+    <Button
+        android:id="@+id/buttonShoe"
+        android:layout_width="129dp"
+        android:layout_height="129dp"
+        android:background="@drawable/buttontype2"
+        android:minWidth="260dp"
+        android:minHeight="80dp"
+        android:text="Shoe"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#B86DD8"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="215dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.63" />
+
+    <Button
+        android:id="@+id/buttonBottom"
+        android:layout_width="129dp"
+        android:layout_height="129dp"
+        android:background="@drawable/buttontype2"
+        android:minWidth="260dp"
+        android:minHeight="80dp"
+        android:text="Bottom"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#B86DD8"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAcc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintStart_toEndOf="@+id/buttonTop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.884" />
+
+    <Button
+        android:id="@+id/buttonTop"
+        android:layout_width="129dp"
+        android:layout_height="129dp"
+        android:background="@drawable/buttontype2"
+        android:minWidth="260dp"
+        android:minHeight="80dp"
+        android:text="Top"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#B86DD8"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonShoe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88" />
+
+    <Button
+        android:id="@+id/buttonAcc"
+        android:layout_width="129dp"
+        android:layout_height="129dp"
+        android:background="@drawable/buttontype2"
+        android:minWidth="260dp"
+        android:minHeight="80dp"
+        android:text="Acc."
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#B86DD8"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.803"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.628" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

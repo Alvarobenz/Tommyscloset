@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/main_background1"
+    android:background="@drawable/homescreenbg"
     tools:context="com.example.tommyscloset.HomeActivity">
 
     <Button
@@ -91,8 +91,8 @@
         android:textColor="#DD2E9C"
         android:textColorLink="#B86DD8"
         android:textSize="18sp"
-        android:translationX="-150dp"
-        android:translationY="-600dp" />
+        android:translationX="0dp"
+        android:translationY="50dp" />
 
 
 </LinearLayout>

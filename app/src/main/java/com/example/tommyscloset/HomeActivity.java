@@ -53,30 +53,28 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 openAccount();
                 break;
             case R.id.button0:
-                FirebaseAuth.getInstance().signOut();
-                Toast.makeText(HomeActivity.this, "Error Occurred!", Toast.LENGTH_SHORT).show();
-                startActivity( new Intent(HomeActivity.this, MainActivity.class));
+                openLogout();
                 break;
         }
     }
 
     public  void openGoingout(){
-        Intent intent = new Intent(this, Clothesselect.class  );
+        Intent intent = new Intent(this, ClothesuploadSelect.class  );
         startActivity(intent);
     }
 
     public  void openUpload(){
-        Intent intent = new Intent(this, Clothesupload.class  );
+        Intent intent = new Intent(this, ClothesuploadSelect.class  );
         startActivity(intent);
     }
 
     public  void openViewall(){
-        Intent intent = new Intent(this, Galleryview.class  );
+        Intent intent = new Intent(this, ClothesuploadSelect.class  );
         startActivity(intent);
     }
 
     public  void openLaundry(){
-        Intent intent = new Intent(this, Laundry.class  );
+        Intent intent = new Intent(this, ClothesuploadSelect.class  );
         startActivity(intent);
     }
 
@@ -84,4 +82,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this, Accountsettings.class  );
         startActivity(intent);
     }
+    public  void openLogout(){
+        FirebaseAuth.getInstance().signOut();
+        Toast.makeText(HomeActivity.this, "Logged out", Toast.LENGTH_SHORT).show();
+        startActivity( new Intent(HomeActivity.this, MainActivity.class));
+        finish();
+    }
+
 }
