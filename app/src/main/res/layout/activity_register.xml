@@ -23,17 +23,27 @@
         android:paddingLeft="2dp"
         android:background="#99FFFFFF"
         android:drawableLeft="@drawable/username"
-        android:hint="@string/email"/>
+        android:hint= " Email"/>
 
     <EditText
-        android:id="@+id/edittext_Username"
+        android:id="@+id/edittext_name"
         android:layout_width="206dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:paddingLeft="2dp"
         android:background="#99FFFFFF"
         android:drawableLeft="@drawable/username"
-        android:hint="Name"/>
+        android:hint=" Name"/>
+
+    <EditText
+        android:id="@+id/edittext_gender"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="2dp"
+        android:background="#99FFFFFF"
+        android:drawableLeft="@drawable/username"
+        android:hint=" Gender"/>
 
     <EditText
         android:id="@+id/edittext_password"

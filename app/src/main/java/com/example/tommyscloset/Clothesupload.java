@@ -45,29 +45,37 @@ public class Clothesupload extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    // set itemType to top, bottom, shoe, or accessory
     public  void selectTop(){
-//        create item w/ unique code from firebase attached to user
-  //              set itemType to 'Top'
-
-        startActivity( new Intent(getApplicationContext(), uploadImage.class));
+        String itemType = "";
+        Intent intent = new Intent(Clothesupload.this, uploadImage.class);
+        intent.putExtra("top", itemType);
+        startActivity(intent);
         finish();
     }
 
     public  void selectBottom(){
-        startActivity( new Intent(getApplicationContext(), uploadImage.class));
+        String itemType = "";
+        Intent intent = new Intent(Clothesupload.this, uploadImage.class);
+        intent.putExtra("bottom", itemType);
+        startActivity(intent);
         finish();
     }
 
     public  void selectShoe(){
-        startActivity( new Intent(getApplicationContext(), uploadImage.class));
+        String itemType = "";
+        Intent intent = new Intent(Clothesupload.this, uploadImage.class);
+        intent.putExtra("shoe", itemType);
+        startActivity(intent);
         finish();
     }
 
     public  void selectAcc(){
-        startActivity( new Intent(getApplicationContext(), uploadImage.class));
+        String itemType = "";
+        Intent intent = new Intent(Clothesupload.this, uploadImage.class);
+        intent.putExtra("accessory", itemType);
+        startActivity(intent);
         finish();
     }
-
-
-    }
+}
 

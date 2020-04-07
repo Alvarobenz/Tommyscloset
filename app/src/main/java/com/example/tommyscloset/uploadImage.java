@@ -50,9 +50,11 @@ public class uploadImage extends AppCompatActivity {
     public static final int GALLERY_REQUEST_CODE = 105;
 
     ImageView selectedImage;
-    Button cameraBtn1,galleryBtn;
+    Button cameraBtn1,galleryBtn, nextBtn;
     String userID;
     String currentPhotoPath;
+    String imageUri;
+
 
     FirebaseAuth mFirebaseAuth;
 
@@ -68,6 +70,7 @@ public class uploadImage extends AppCompatActivity {
         selectedImage = findViewById(R.id.displayImageView);
         cameraBtn1 = findViewById(R.id.cameraBtn1);
         galleryBtn = findViewById(R.id.galleryBtn);
+        nextBtn = findViewById(R.id.nextBtn);
 
         mFirebaseAuth   = FirebaseAuth.getInstance();
         userID = mFirebaseAuth.getCurrentUser().getUid();     //get userID to use for storage
@@ -90,6 +93,14 @@ public class uploadImage extends AppCompatActivity {
                 startActivityForResult(gallery, GALLERY_REQUEST_CODE);
             }
         });
+
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent(getApplicationContext(), uploadImage.class));
+            }
+        });
+
 
     }
 
@@ -156,13 +167,14 @@ public class uploadImage extends AppCompatActivity {
         // figure out how to attach to a user
         //final StorageReference image = fstore.collection("users").document(userID);
 
-        final StorageReference image = storageReference.child("itemImages/" + filename);
+        final StorageReference image1 = storageReference.child("itemImages/" + filename);
         // itemImages/image.jpg
 
         // took out to follow the tutorial
-        //final StorageReference image = FirebaseStorage.getInstance().getReference()
-         //       .child("itemImages/")
-          //      .child(userID + ".jpeg");
+        final StorageReference image = FirebaseStorage.getInstance().getReference()
+                .child("itemImages/")
+                .child(userID + "/")
+                .child(filename);
 
        image.putFile(contentUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -173,9 +185,15 @@ public class uploadImage extends AppCompatActivity {
                         // use this for gallary format
                         Picasso.get().load(uri).into(selectedImage);
                         Log.d("tag", "onSuccess: Uploaded Image URl is " + uri.toString());
+
+                        //
+                        String itemType = "";
+                        Intent intent = new Intent(Clothesupload.this, uploadImage.class);
+                        intent.putExtra("shoe", itemType);
+                        startActivity(intent);
+
                     }
                 });
-
                 Toast.makeText(uploadImage.this, "Image Is Uploaded.", Toast.LENGTH_SHORT).show();
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -184,7 +202,6 @@ public class uploadImage extends AppCompatActivity {
                 Toast.makeText(uploadImage.this, "Upload Failled.", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
 

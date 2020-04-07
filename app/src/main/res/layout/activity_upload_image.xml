@@ -39,6 +39,18 @@
         app:layout_constraintStart_toEndOf="@+id/cameraBtn1"
         app:layout_constraintTop_toTopOf="@+id/cameraBtn1" />
 
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/displayImageView" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"

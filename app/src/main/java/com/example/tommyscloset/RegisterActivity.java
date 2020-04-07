@@ -21,6 +21,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -33,13 +35,12 @@ public class RegisterActivity extends AppCompatActivity {
     EditText mTextEmail;
     EditText mTextPassword;
     EditText mTextCnfPassword;
-    EditText mTextUsername;
+    EditText mTextname;
+    EditText mTextGender;
     Button mButtonRegister;
     TextView mTextViewLogin;
     FirebaseAuth mFirebaseAuth;
     ProgressBar progressBar;
-    FirebaseFirestore fstore;
-    String userID;
 
     private static final String TAG = "users";
 
@@ -50,17 +51,14 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         mFirebaseAuth   = FirebaseAuth.getInstance();
-        fstore = FirebaseFirestore.getInstance();
-
-        FirebaseUser fUser = FirebaseAuth.getInstance().getCurrentUser();
-
 
         progressBar = findViewById(R.id.progressBar);
         mTextEmail      = findViewById(R.id.edittext_email);
         mTextPassword   = findViewById(R.id.edittext_password);
         mTextCnfPassword = findViewById(R.id.edittext_cnf_password);
         mTextViewLogin = findViewById(R.id.textview_login);
-        mTextUsername = findViewById(R.id.edittext_Username);
+        mTextname = findViewById(R.id.edittext_name);
+        mTextGender = findViewById(R.id.edittext_gender);
         mButtonRegister = findViewById(R.id.button_register);
 
 
@@ -68,7 +66,8 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final String email = mTextEmail.getText().toString().trim();
-                final String userN = mTextUsername.getText().toString().trim();
+                final String name = mTextname.getText().toString().trim();
+                final String gender = mTextGender.getText().toString().trim();
                 String pwd = mTextPassword.getText().toString().trim();
                 String cnf_pwd = mTextCnfPassword.getText().toString().trim();
 
@@ -78,7 +77,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (TextUtils.isEmpty(userN)) { //if Email field is empty
+                if (TextUtils.isEmpty(name)) { //if Email field is empty
                     mTextEmail.setError("Please enter your name");
                     mTextEmail.requestFocus();
                     return;
@@ -98,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-                if ((pwd.isEmpty() && email.isEmpty() && cnf_pwd.isEmpty() && userN.isEmpty())) { //if all fields are empty
+                if ((pwd.isEmpty() && email.isEmpty() && cnf_pwd.isEmpty() && name.isEmpty())) { //if all fields are empty
                     Toast.makeText(RegisterActivity.this, "The Fields Are Empty R4", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -135,8 +134,7 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(RegisterActivity.this, "You have registered R10", Toast.LENGTH_SHORT).show();
-
+                            /* Took out for  https://www.youtube.com/watch?v=K3mcK5fUIns instead of putting this in the firestore database
                             userID = mFirebaseAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = fstore.collection("users").document(userID);
                             Map<String, Object> user = new HashMap<>();
@@ -153,7 +151,31 @@ public class RegisterActivity extends AppCompatActivity {
                                     Log.d(TAG, "onFailure " + e.toString());
                                 }
                             });
+                             */
+
+                            FirebaseUser user = mFirebaseAuth.getCurrentUser();
+                            // Get user email and uid from auth
+                            String email = user.getEmail();
+                            String uid= user.getUid();
+                            // When user is registered store user info in firebase realtime database too
+                            // Using Hashmap
+                            HashMap<Object, String> hashMap = new HashMap<>();
+                            // Put info in hashmap
+                            hashMap.put("email", email);
+                            hashMap.put("uid", uid);
+                            hashMap.put("name", name); // Add later (e.g., edit the profile)
+                            hashMap.put("image", "");
+                            hashMap.put("gender", gender);
+                            // Firebase database instance
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            // Path to store user data named "Users"
+                            DatabaseReference reference = database.getReference("Users");
+                            // Put data within hashmap in database
+                            reference.child(uid).setValue(hashMap);
+
+                            Toast.makeText(RegisterActivity.this, "You have registered", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            progressBar.setVisibility(View.GONE);
                             finish();
                         } else {
                             Toast.makeText(RegisterActivity.this, "Registration Unsuccessful, Please Try Again: R11" + task.getException().getMessage() , Toast.LENGTH_SHORT).show();
