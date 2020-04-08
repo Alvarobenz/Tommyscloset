@@ -75,6 +75,8 @@ public class uploadImage extends AppCompatActivity {
         mFirebaseAuth   = FirebaseAuth.getInstance();
         userID = mFirebaseAuth.getCurrentUser().getUid();     //get userID to use for storage
 
+        // init to imageUri to null, only successful upload and uri grab will update it
+        imageUri = null;
 
         //fstore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
@@ -97,7 +99,21 @@ public class uploadImage extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity( new Intent(getApplicationContext(), uploadImage.class));
+                if (imageUri != null) {
+                    // itemType get from previous activity .putExtra
+                    String itemType = getIntent().getStringExtra("itemType");
+
+                    Intent intent = new Intent(uploadImage.this, uploadItem.class);
+                    // .putExtra imageUri and itemType -> uploadItem.class
+                    intent.putExtra("imageUri", imageUri).putExtra("itemType", itemType);
+                    
+                    startActivity(intent);
+                    finish();
+                }
+                else {
+                    Log.d("tag", "imageUri == null still  " );
+                    Toast.makeText(uploadImage.this, "Please select an image first", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -167,7 +183,7 @@ public class uploadImage extends AppCompatActivity {
         // figure out how to attach to a user
         //final StorageReference image = fstore.collection("users").document(userID);
 
-        final StorageReference image1 = storageReference.child("itemImages/" + filename);
+        //final StorageReference image1 = storageReference.child("itemImages/" + filename);
         // itemImages/image.jpg
 
         // took out to follow the tutorial
@@ -182,16 +198,11 @@ public class uploadImage extends AppCompatActivity {
                 image.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
-                        // use this for gallary format
+                        // display image in imageView
                         Picasso.get().load(uri).into(selectedImage);
                         Log.d("tag", "onSuccess: Uploaded Image URl is " + uri.toString());
-
-                        //
-                        String itemType = "";
-                        Intent intent = new Intent(Clothesupload.this, uploadImage.class);
-                        intent.putExtra("shoe", itemType);
-                        startActivity(intent);
-
+                        // update imageUri with image url
+                        imageUri = uri.toString();
                     }
                 });
                 Toast.makeText(uploadImage.this, "Image Is Uploaded.", Toast.LENGTH_SHORT).show();

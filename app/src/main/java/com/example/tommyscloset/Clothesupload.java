@@ -47,33 +47,29 @@ public class Clothesupload extends AppCompatActivity implements View.OnClickList
 
     // set itemType to top, bottom, shoe, or accessory
     public  void selectTop(){
-        String itemType = "";
         Intent intent = new Intent(Clothesupload.this, uploadImage.class);
-        intent.putExtra("top", itemType);
+        intent.putExtra("itemType", "top");
         startActivity(intent);
         finish();
     }
 
     public  void selectBottom(){
-        String itemType = "";
         Intent intent = new Intent(Clothesupload.this, uploadImage.class);
-        intent.putExtra("bottom", itemType);
+        intent.putExtra("itemType", "bottom");
         startActivity(intent);
         finish();
     }
 
     public  void selectShoe(){
-        String itemType = "";
         Intent intent = new Intent(Clothesupload.this, uploadImage.class);
-        intent.putExtra("shoe", itemType);
+        intent.putExtra("itemType", "shoe");
         startActivity(intent);
         finish();
     }
 
     public  void selectAcc(){
-        String itemType = "";
         Intent intent = new Intent(Clothesupload.this, uploadImage.class);
-        intent.putExtra("accessory", itemType);
+        intent.putExtra("itemType", "accessory");
         startActivity(intent);
         finish();
     }

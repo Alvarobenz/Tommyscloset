@@ -466,7 +466,7 @@ public class Accountsettings extends AppCompatActivity {
     // or ----- startActivityForResult(galleryIntent, IMAGE_PICK_GALLERY_CODE);
     // request code will tell us, result code will tell us if
     @Override
-    protected void onActivityResult(int resultCode, int requestCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         // After picking image from Camera or Gallery
         if (resultCode == RESULT_OK) {
             if (requestCode == IMAGE_PICK_GALLERY_CODE){

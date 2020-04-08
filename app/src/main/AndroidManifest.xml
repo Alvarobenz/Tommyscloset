@@ -14,6 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".uploadItem"></activity>
         <activity android:name=".uploadImage" />
         <activity android:name=".ClothesuploadSelect" />
         <activity android:name=".Galleryview" />
@@ -38,9 +39,8 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"> </meta-data>
+                android:resource="@xml/file_paths"></meta-data>
         </provider>
-
     </application>
 
 </manifest>
