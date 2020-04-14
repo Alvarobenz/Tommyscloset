@@ -6,18 +6,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class GridItem extends AppCompatActivity {
 
     TextView gridData;
-    ImageView imageView;
+    ImageView imageViewTop, imageViewBottom, imageViewAccessory, imageViewShoe;
+    ChipGroup chipGroup1;
+    List<String> outfitTagArray = new ArrayList<>();
+    Chip chip1, chip2, chip3, chip4, chip5, chip6;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -26,14 +35,100 @@ public class GridItem extends AppCompatActivity {
         setContentView(R.layout.activity_grid_item);
 
         gridData = findViewById(R.id.griddata);
-        imageView = findViewById(R.id.imageView);
+        imageViewTop = findViewById(R.id.imageViewTop);
+        imageViewBottom = findViewById(R.id.imageViewBottom);
+        imageViewShoe = findViewById(R.id.imageViewShoe);
+        imageViewAccessory = findViewById(R.id.imageViewAccessory);
+        chipGroup1 = findViewById(R.id.chipGroup1);
+        chip1 = findViewById(R.id.chip1);
+        chip2 = findViewById(R.id.chip2);
+        chip3 = findViewById(R.id.chip3);
+        chip4 = findViewById(R.id.chip4);
+        chip5 = findViewById(R.id.chip5);
+        chip6 = findViewById(R.id.chip6);
 
         Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
         String receivedName =  intent.getStringExtra("name");
-        String receivedImage = intent.getStringExtra("image");
+        String receivedImageTop = intent.getStringExtra("imageTop");
+        String receivedImageBottom = intent.getStringExtra("imageBottom");
+        String receivedImageShoe = intent.getStringExtra("imageShoe");
+        String receivedImageAccessory = intent.getStringExtra("imageAccessory");
+        assert bundle != null;
+        outfitTagArray =  (List<String>) bundle.getSerializable("outfitTagArray");
+
 
         gridData.setText(receivedName);
-        Picasso.get().load(receivedImage).into(imageView);
+        Picasso.get().load(receivedImageTop).into(imageViewTop);
+        Picasso.get().load(receivedImageBottom).into(imageViewBottom);
+        Picasso.get().load(receivedImageShoe).into(imageViewShoe);
+        Picasso.get().load(receivedImageAccessory).into(imageViewAccessory);
+
+        try {
+
+        if (outfitTagArray.size() != 0) {
+            Log.d("tagitemAdapter", "tagArraysize = " + outfitTagArray.size() );
+
+            switch ( outfitTagArray.size() ) {
+                case 1:
+                    chip1.setText(outfitTagArray.get(0));
+                    chip1.setVisibility(View.VISIBLE);
+                    break;
+                case 2:
+                    chip1.setText(outfitTagArray.get(0));
+                    chip1.setVisibility(View.VISIBLE);
+                    chip2.setText(outfitTagArray.get(1));
+                    chip2.setVisibility(View.VISIBLE);
+                    break;
+                case 3:
+                    chip1.setText(outfitTagArray.get(0));
+                    chip1.setVisibility(View.VISIBLE);
+                    chip2.setText(outfitTagArray.get(1));
+                    chip2.setVisibility(View.VISIBLE);
+                    chip3.setText(outfitTagArray.get(2));
+                    chip3.setVisibility(View.VISIBLE);
+                    break;
+                case 4:
+                    chip1.setText(outfitTagArray.get(0));
+                    chip1.setVisibility(View.VISIBLE);
+                    chip2.setText(outfitTagArray.get(1));
+                    chip2.setVisibility(View.VISIBLE);
+                    chip3.setText(outfitTagArray.get(2));
+                    chip3.setVisibility(View.VISIBLE);
+                    chip4.setText(outfitTagArray.get(3));
+                    chip4.setVisibility(View.VISIBLE);
+                    break;
+                case 5:
+                    chip1.setText(outfitTagArray.get(0));
+                    chip1.setVisibility(View.VISIBLE);
+                    chip2.setText(outfitTagArray.get(1));
+                    chip2.setVisibility(View.VISIBLE);
+                    chip3.setText(outfitTagArray.get(2));
+                    chip3.setVisibility(View.VISIBLE);
+                    chip4.setText(outfitTagArray.get(3));
+                    chip4.setVisibility(View.VISIBLE);
+                    chip5.setText(outfitTagArray.get(4));
+                    chip5.setVisibility(View.VISIBLE);
+                    break;
+                case 6:
+                    chip1.setText(outfitTagArray.get(0));
+                    chip1.setVisibility(View.VISIBLE);
+                    chip2.setText(outfitTagArray.get(1));
+                    chip2.setVisibility(View.VISIBLE);
+                    chip3.setText(outfitTagArray.get(2));
+                    chip3.setVisibility(View.VISIBLE);
+                    chip4.setText(outfitTagArray.get(3));
+                    chip4.setVisibility(View.VISIBLE);
+                    chip5.setText(outfitTagArray.get(4));
+                    chip5.setVisibility(View.VISIBLE);
+                    chip6.setText(outfitTagArray.get(5));
+                    chip6.setVisibility(View.VISIBLE);
+                    break;
+            }
+        }
+        } catch (Exception e ){
+
+        }
 
     }
 

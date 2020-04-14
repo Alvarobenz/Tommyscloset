@@ -105,8 +105,11 @@ public class Galleryview extends AppCompatActivity {
                             outfitNames.add(outfitList.get(i).outfitName);
                             outfitImages.add(outfitList.get(i).top.photoURL);
                             outfitTagsDisp.add(outfitList.get(i).outfitTags);
+                            Log.d("tagCustomAdapter", "outfit TAGS SIZE=  " + outfitList.get(i).outfitTags.size());
+
+
                         }
-                        Log.d("tagCustomAdapter", "outfit images 2 =  " + outfitImages.size());
+                       // Log.d("tagCustomAdapter", "outfit TAGS SIZE=  " + outfitTagsDisp.size());
                     }
                 }
                 CustomAdapter customAdapter = new CustomAdapter();
@@ -130,7 +133,10 @@ public class Galleryview extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(),GridItem.class);
                 intent.putExtra("name",outfitNames.get(i));
-                intent.putExtra("image",outfitImages.get(i));
+                intent.putExtra("imageTop",outfitList.get(i).top.photoURL);
+                intent.putExtra("imageBottom",outfitList.get(i).bottom.photoURL);
+                intent.putExtra("imageShoe",outfitList.get(i).shoe.photoURL);
+                intent.putExtra("imageAccessory",outfitList.get(i).accessory.photoURL);
                 intent.putExtras(bundle);
 
                 // send string list

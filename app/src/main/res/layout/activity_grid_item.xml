@@ -10,18 +10,149 @@
         android:id="@+id/griddata"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="105dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="171dp"
         android:text="Apple"
-        android:textColor="#000"
-        android:textSize="30dp" />
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:layout_marginBottom="30dp"/>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewAccessory"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/logo"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/griddata"
-        android:layout_marginTop="27dp" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="153dp"
+        android:layout_marginEnd="26dp"
+        android:src="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageViewTop"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/griddata"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-31dp"
+        android:layout_marginEnd="214dp"
+        android:src="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageViewBottom"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/griddata"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-33dp"
+        android:layout_marginEnd="31dp"
+        android:src="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageViewShoe"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/griddata"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="155dp"
+        android:layout_marginEnd="212dp"
+        android:src="@drawable/logo" />
+
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:layout_marginBottom="50dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="0dp"
+
+
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:visibility="visible"
+        app:chipSpacing="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonNext"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outfitNameText"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible">
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="T-Shirt"
+            android:textSize="5dp"
+            app:chipBackgroundColor="#FFEDB8"
+            app:chipMinTouchTargetSize="0dp"
+            android:visibility="invisible"
+            android:textAlignment="center"
+            android:id="@+id/chip1"
+            />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dress"
+            app:chipBackgroundColor="#FFEDB8"
+            app:chipMinTouchTargetSize="0dp"
+            android:visibility="invisible"
+            android:textAlignment="center"
+            android:id="@+id/chip2"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oxford button-down"
+            app:chipBackgroundColor="#FFEDB8"
+            app:chipMinTouchTargetSize="0dp"
+            android:visibility="invisible"
+            android:textAlignment="center"
+            android:id="@+id/chip3"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dress shirt"
+            app:chipBackgroundColor="#FFEDB8"
+            app:chipMinTouchTargetSize="0dp"
+            android:visibility="invisible"
+            android:textAlignment="center"
+            android:id="@+id/chip4"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cuban Short Sleeve"
+            app:chipBackgroundColor="#FFEDB8"
+            app:chipMinTouchTargetSize="0dp"
+            android:visibility="invisible"
+            android:textAlignment="center"
+            android:id="@+id/chip5"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Overshirt"
+            app:chipBackgroundColor="#FFEDB8"
+            app:chipMinTouchTargetSize="0dp"
+            android:visibility="invisible"
+            android:textAlignment="center"
+            android:id="@+id/chip6"/>
+
+    </com.google.android.material.chip.ChipGroup>
+
+
 </RelativeLayout>
