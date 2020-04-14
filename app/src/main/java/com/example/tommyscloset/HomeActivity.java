@@ -69,7 +69,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public  void openViewall(){
-        Intent intent = new Intent(this, ClothesuploadSelect.class  );
+        Intent intent = new Intent(this, Galleryview.class  );
         startActivity(intent);
     }
 

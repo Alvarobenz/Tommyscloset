@@ -13,7 +13,7 @@
         android:id="@+id/buttonItem"
         android:layout_width="129dp"
         android:layout_height="129dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="200dp"
         android:background="@drawable/buttontype2"
         android:minWidth="260dp"
         android:minHeight="80dp"
@@ -42,7 +42,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.519" />
+        app:layout_constraintVertical_bias="0.676" />
+
+    <Button
+        android:id="@+id/buttonDone"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:background="@drawable/buttontype1"
+        android:minWidth="260dp"
+        android:minHeight="80dp"
+        android:text="Done"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#B86DD8"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.886" />
+    /
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.example.tommyscloset;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -116,11 +117,13 @@ public class uploadItem extends AppCompatActivity {
                 // Put data within hashmap in database
                 reference.setValue(hashMap);
                 // for 2nd hashmap for Tags
-                reference.child("tags").setValue(tagArray);;
+                reference.child("tags").setValue(tagArray);
+
+                startActivity(new Intent(getApplicationContext(), ClothesuploadSelect.class));
+                finish();
             }
         });
     }
-
     // Put tags into tagArray that were selected
     private void chipTagsSelected(int chipsCount) {
         String msg = "Chips checked are:";

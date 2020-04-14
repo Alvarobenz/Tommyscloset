@@ -170,7 +170,6 @@ public class uploadImage extends AppCompatActivity {
                 String imageFileName = userStamp + "_" + timeStamp + "." + getFileExt(contentUri);
                 Log.d("tag", "onActivityResult: Gallery Image Uri:  " + imageFileName);
                 //selectedImage.setImageURI(contentUri);
-
                 uploadImageToFirebase(imageFileName,contentUri);
             }
         }

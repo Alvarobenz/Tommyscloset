@@ -1,41 +1,18 @@
 package com.example.tommyscloset;
 
-public class item {
-    public double age;
-    public String gender;
-    public String userName;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-    //required default constructor
+public class item implements Serializable {
+
+    public String itemName;
+    public String itemNumber;
+    public String itemType;
+    public String photoURL;
+    public List<String> tags;
+
     public item() {
     }
 
-    public item(double age, String gender, String userName) {
-        this.age = age;
-        this.gender = gender;
-        this.userName = userName;
-    }
-
-    public double getAge() {
-        return age;
-    }
-
-    public void setAge(double age) {
-        this.age = age;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 }

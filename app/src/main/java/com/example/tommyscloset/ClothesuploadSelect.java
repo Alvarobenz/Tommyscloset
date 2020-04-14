@@ -16,6 +16,7 @@ public class ClothesuploadSelect extends AppCompatActivity {
 
         Button buttonItem = findViewById(R.id.buttonItem);
         Button buttonOutfit = findViewById(R.id.buttonOutfit);
+        Button buttonDone = findViewById(R.id.buttonDone);
 
         buttonItem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,7 +30,16 @@ public class ClothesuploadSelect extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // change to go to
-                startActivity(new Intent(getApplicationContext(), ClothesuploadSelect.class));
+                startActivity(new Intent(getApplicationContext(), Createoutfit.class));
+                finish();
+            }
+        });
+        // go back to main menu
+        buttonDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // change to go to
+                startActivity(new Intent(getApplicationContext(), Createoutfit.class));
                 finish();
             }
         });

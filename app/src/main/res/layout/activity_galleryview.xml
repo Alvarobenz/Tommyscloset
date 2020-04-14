@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Clothesselect">
+    tools:context=".Galleryview">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="122dp"
-        android:layout_height="87dp"
-        android:text="View All Gallery"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="215dp" />
+    <GridView
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:columnWidth="100dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="24dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="spacingWidthUniform"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
