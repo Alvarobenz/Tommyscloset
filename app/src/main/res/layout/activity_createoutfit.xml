@@ -10,6 +10,23 @@
     tools:context=".Createoutfit">
 
     <TextView
+        android:id="@+id/itemType2Txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text=" 'Select all 4 items' "
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textColor="@color/color_preloader_end"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/itemImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+    <TextView
         android:id="@+id/itemTypeTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -260,7 +277,7 @@
         android:layout_width="206dp"
         android:layout_height="40dp"
         android:layout_marginTop="100dp"
-        android:background="#A361CFBF"
+        android:background="@color/lightAccent"
         android:hint="              Outfit Name"
         android:textStyle="normal|italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -294,7 +311,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="T-Shirt"
+            android:text="Hot"
             android:textSize="5dp"
             app:chipMinTouchTargetSize="0dp"
             app:chipBackgroundColor="#FFEDB8"
@@ -304,7 +321,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dress"
+            android:text="Cold"
             app:chipMinTouchTargetSize="0dp"
             app:chipBackgroundColor="#FFEDB8"/>
 
@@ -312,7 +329,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Oxford button-down"
+            android:text="Warm"
             app:chipMinTouchTargetSize="0dp"
             app:chipBackgroundColor="#FFEDB8"/>
 
@@ -320,7 +337,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dress shirt"
+            android:text="Cool"
             app:chipMinTouchTargetSize="0dp"
             app:chipBackgroundColor="#FFEDB8"/>
 
@@ -328,7 +345,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cuban Short Sleeve"
+            android:text="Chilly"
             app:chipMinTouchTargetSize="0dp"
             app:chipBackgroundColor="#FFEDB8"/>
 
@@ -336,7 +353,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Overshirt"
+            android:text="Summer"
             app:chipMinTouchTargetSize="0dp"
             app:chipBackgroundColor="#FFEDB8"/>
 
@@ -344,7 +361,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Flannel"
+            android:text="Winter"
             app:chipMinTouchTargetSize="0dp"
             app:chipBackgroundColor="#FFEDB8"/>
 
@@ -352,7 +369,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Workout shirt"
+            android:text="Sunny"
             app:chipMinTouchTargetSize="0dp"
             app:chipBackgroundColor="#FFEDB8"/>
 
@@ -360,7 +377,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Denim shirt"
+            android:text="Windy"
             app:chipMinTouchTargetSize="0dp"
             app:chipBackgroundColor="#FFEDB8"/>
 
@@ -368,7 +385,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Classic short-sleeve"
+            android:text="Tropical"
             app:chipMinTouchTargetSize="0dp"
             app:chipBackgroundColor="#FFEDB8"/>
 
@@ -376,7 +393,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Workout shirt"
+            android:text="Humid"
             app:chipMinTouchTargetSize="0dp"
             app:chipBackgroundColor="#FFEDB8"/>
 
@@ -384,7 +401,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jeans"
+            android:text="Autumn"
             app:chipMinTouchTargetSize="0dp"
             app:chipBackgroundColor="#FFEDB8"/>
 
@@ -392,7 +409,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bracelet"
+            android:text="Date"
             app:chipMinTouchTargetSize="0dp"
             app:chipBackgroundColor="#FFEDB8"/>
 
@@ -400,7 +417,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Watch"
+            android:text="Social Gathering"
             app:chipMinTouchTargetSize="0dp"
             app:chipBackgroundColor="#FFEDB8"/>
 

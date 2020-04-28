@@ -110,9 +110,13 @@ public class itemSelection extends AppCompatActivity {
                     assert item != null;
                     Log.d("tagitemSelecttion", "item SnapShot running for =  " + item.itemName );
 
-                    if (item.itemType.equals(itemClickedGBL)){
-                        itemList.add(item);
-                        Log.d("tagitemSelecttion", "item added to itemList= " + item.itemName );
+                    try {
+                        if (item.itemType.equals(itemClickedGBL)) {
+                            itemList.add(item);
+                            Log.d("tagitemSelecttion", "item added to itemList= " + item.itemName);
+                        }
+                    }catch (Exception e ){
+
                     }
                 }
                 adapter.notifyDataSetChanged();

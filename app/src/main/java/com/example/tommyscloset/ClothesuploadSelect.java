@@ -39,7 +39,7 @@ public class ClothesuploadSelect extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // change to go to
-                startActivity(new Intent(getApplicationContext(), Createoutfit.class));
+                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                 finish();
             }
         });

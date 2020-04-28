@@ -3,7 +3,6 @@ package com.example.tommyscloset;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +13,10 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -32,7 +34,7 @@ import java.util.List;
 
 import static com.google.firebase.storage.FirebaseStorage.getInstance;
 
-public class Galleryview extends AppCompatActivity {
+public class OutfitDisplay extends AppCompatActivity {
 
     GridView gridView;
 
@@ -42,8 +44,10 @@ public class Galleryview extends AppCompatActivity {
     // List of lists of tags
     List<List<String>> outfitTagsDisp;
 
-
     List<outfit> outfitList;
+
+    List<String> outfitTagsSelected;
+
 
     // Firebase
     FirebaseAuth fAuth;
@@ -53,11 +57,16 @@ public class Galleryview extends AppCompatActivity {
     StorageReference storageReference;
     String userID;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_galleryview);
+        setContentView(R.layout.activity_outfit_display);
+
+        outfitList = null;
+        outfitTagsSelected = null;
+        outfitTagsDisp = null;
+        outfitImages = null;
+        outfitNames = null;
 
         //finding listview
         gridView = findViewById(R.id.gridview);
@@ -79,13 +88,87 @@ public class Galleryview extends AppCompatActivity {
         userID = fUser.getUid();
 
 
-        /* We have to get info of currently signed in user. We can get it using the user's email or uid
+        Intent intent1 = this.getIntent();
+        Bundle bundle = intent1.getExtras();
+        outfitTagsSelected =  (List<String>) bundle.getSerializable("outfitTagsArray");
+        Log.d("tagDisplay", "outDisplay tags selected =  " + outfitTagsSelected);
+
+
+          /* We have to get info of currently signed in user. We can get it using the user's email or uid
             I'm gonna retrieve user detail using email
           By Using orderbyChild query we will show the detail from a node
           whose key named email has a value equal == to currently signed in email.
           It will search all nodes, where the key matches it will get it's detail.
          */
 
+
+        Query query1 = FirebaseDatabase.getInstance().getReference("Users/" + userID + "/outfits")
+                .orderByChild("outfitName");
+        query1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // check until required data is found
+
+                if(dataSnapshot.exists()){
+                    for (DataSnapshot ds: dataSnapshot.getChildren()){
+                        outfit outfit = ds.getValue(outfit.class);
+                        assert outfit != null;
+                        outfitList.add(outfit);
+                    }
+
+                    for (int k = 0; k < outfitList.size(); k++) {
+
+                        for(int i = 0; i < outfitTagsSelected.size(); i++) {
+
+                            String outfitTagIndex;
+                            outfitTagIndex = outfitTagsSelected.get(i);
+
+                            try {
+                                Log.d("tagCustomAdapter", "outfitTagsSelected =  " + outfitTagsSelected.get(i));
+                            } catch (Exception e) {
+                                Log.d("tagCustomAdapter", "CAUGHT AT QUERY   ");
+                            }
+
+                            if (outfitList.get(k).outfitTags.contains(outfitTagIndex)) {
+
+                                Log.d("outfitDisplay", "outfitList.outfitTags list are  =  " + outfitList.get(k).outfitTags  );
+                                Log.d("outfitDisplay", "outfitTagIndex we are checking for in that list =  " + outfitTagIndex  );
+                                Log.d("outfitDisplay", "outfitName  =  " + outfitList.get(k).outfitName  );
+
+
+                                    if ( !outfitNames.contains(outfitList.get(k).outfitName) ){
+                                        outfitNames.add(outfitList.get(k).outfitName);
+                                        outfitImages.add(outfitList.get(k).top.photoURL);
+                                        outfitTagsDisp.add(outfitList.get(k).outfitTags);
+                                        Log.d("tagCustomAdapter", "outfit ADDED=  " + outfitList.get(k).outfitName);
+                                    }
+                                    else {
+                                        Log.d("tagCustomAdapter", "NO OUTFITED SKIPPED " + outfitList.get(k).outfitName);
+
+                                    }
+
+                                // Log.d("tagCustomAdapter", "outfit TAGS SIZE=  " + outfitTagsDisp.size());
+                            }
+                        }
+                }
+                }
+
+                OutfitDisplay.CustomAdapter customAdapter = new OutfitDisplay.CustomAdapter();
+                gridView.setAdapter(customAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
+
+
+/*
         Query query1 = FirebaseDatabase.getInstance().getReference("Users/" + userID + "/outfits")
                 .orderByChild("outfitName");
         query1.addValueEventListener(new ValueEventListener() {
@@ -109,10 +192,10 @@ public class Galleryview extends AppCompatActivity {
 
 
                         }
-                       // Log.d("tagCustomAdapter", "outfit TAGS SIZE=  " + outfitTagsDisp.size());
+                        // Log.d("tagCustomAdapter", "outfit TAGS SIZE=  " + outfitTagsDisp.size());
                     }
                 }
-                CustomAdapter customAdapter = new CustomAdapter();
+                OutfitDisplay.CustomAdapter customAdapter = new OutfitDisplay.CustomAdapter();
                 gridView.setAdapter(customAdapter);
             }
 
@@ -121,6 +204,11 @@ public class Galleryview extends AppCompatActivity {
 
             }
         });
+
+ */
+
+
+
 
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -131,15 +219,18 @@ public class Galleryview extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("outfitTagsArray", (Serializable) outfitTagsDisp.get(i));
 
-                Log.d("tagGalleryView", " (1) outfitTagList sent = " + outfitTagsDisp.get(i));
-
                 Intent intent = new Intent(getApplicationContext(),GridItem.class);
-
                 intent.putExtra("name",outfitNames.get(i));
                 intent.putExtra("imageTop",outfitList.get(i).top.photoURL);
                 intent.putExtra("imageBottom",outfitList.get(i).bottom.photoURL);
                 intent.putExtra("imageShoe",outfitList.get(i).shoe.photoURL);
                 intent.putExtra("imageAccessory",outfitList.get(i).accessory.photoURL);
+
+                intent.putExtra("topNumber", outfitList.get(i).top.itemNumber);
+                intent.putExtra("bottomNumber", outfitList.get(i).bottom.itemNumber);
+                intent.putExtra("shoeNumber", outfitList.get(i).shoe.itemNumber);
+                intent.putExtra("accessoryNumber", outfitList.get(i).accessory.itemNumber);
+
                 intent.putExtras(bundle);
 
                 // send string list
@@ -148,18 +239,9 @@ public class Galleryview extends AppCompatActivity {
             }
         });
 
-
-
-
-
     }
 
-    // ADD CHIPS TO XML FILE AND CODE TO DISPLAY THEM HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    //
-    //
-    //
-    //
-    // Below
+
     public class CustomAdapter extends BaseAdapter {
 
         @Override
@@ -201,4 +283,17 @@ public class Galleryview extends AppCompatActivity {
         }
     }
 
+
 }
+
+
+
+
+
+
+
+
+
+
+
+

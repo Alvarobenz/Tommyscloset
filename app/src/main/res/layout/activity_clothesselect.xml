@@ -7,14 +7,334 @@
     tools:context=".Clothesselect">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="139dp"
-        android:layout_height="47dp"
-        android:text="Going out"
-        android:textSize="32sp"
+        android:id="@+id/itemClimateTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Climate"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textSize="25dp"
+        android:textStyle="normal|italic"
+        app:layout_constraintBottom_toTopOf="@+id/chipGroup2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.164"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="215dp" />
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup2"
+        android:layout_width="296dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="468dp"
+        android:paddingStart="0dp"
+
+
+        android:paddingEnd="0dp"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:visibility="visible"
+
+        app:chipSpacing="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outfitNameText"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible">
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Summer"
+            android:textSize="5dp"
+            app:chipBackgroundColor="#FDD55D"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Winter"
+            app:chipBackgroundColor="#FDD55D"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sunny"
+            app:chipBackgroundColor="#FDD55D"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Windy"
+            app:chipBackgroundColor="#FDD55D"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tropical"
+            app:chipBackgroundColor="#FDD55D"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Humid"
+            app:chipBackgroundColor="#FDD55D"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Autumn"
+            app:chipBackgroundColor="#FDD55D"
+            app:chipMinTouchTargetSize="0dp" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/itemTempTxt"
+        android:layout_width="147dp"
+        android:layout_height="32dp"
+        android:text="Temperature"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textSize="25dp"
+        android:textStyle="normal|italic"
+        app:layout_constraintBottom_toTopOf="@+id/chipGroup1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="632dp"
+        android:paddingStart="0dp"
+
+
+        android:paddingEnd="0dp"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:visibility="visible"
+
+        app:chipSpacing="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outfitNameText"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible">
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hot"
+            android:textSize="5dp"
+            app:chipBackgroundColor="#99BFDD"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cold"
+            app:chipBackgroundColor="#99BFDD"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Warm"
+            app:chipBackgroundColor="#99BFDD"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cool"
+            app:chipBackgroundColor="#99BFDD"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chilly"
+            app:chipBackgroundColor="#99BFDD"
+            app:chipMinTouchTargetSize="0dp" />
+
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_gravity="top"
+        android:layout_marginStart="148dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/chipGroup1"
+        app:layout_constraintStart_toStartOf="@+id/itemTempTxt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/temp1"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup3"
+        android:layout_width="316dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="308dp"
+        android:paddingStart="0dp"
+
+
+        android:paddingEnd="0dp"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:visibility="visible"
+
+        app:chipSpacing="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.662"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outfitNameText"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible">
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textSize="5dp"
+            app:chipBackgroundColor="#FFC9EB"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Social Gathering"
+            app:chipBackgroundColor="#FFC9EB"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sports"
+            app:chipBackgroundColor="#FFC9EB"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dress shirt"
+            app:chipBackgroundColor="#FFC9EB"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Formal"
+            app:chipBackgroundColor="#FFC9EB"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Relaxed"
+            app:chipBackgroundColor="#FFC9EB"
+            app:chipMinTouchTargetSize="0dp" />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="School/Work"
+            app:chipBackgroundColor="#FFC9EB"
+            app:chipMinTouchTargetSize="0dp" />
+
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/itemTypeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Occasion"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textSize="25dp"
+        android:textStyle="normal|italic"
+        app:layout_constraintBottom_toTopOf="@+id/chipGroup3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup2"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/buttontype2"
+        android:minWidth="260dp"
+        android:minHeight="80dp"
+        android:text="Back"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#B86DD8"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonNext"
+
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup1"
+        app:layout_constraintVertical_bias="0.881" />
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/buttontype2"
+        android:minWidth="260dp"
+        android:minHeight="80dp"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#B86DD8"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.831"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup1"
+        app:layout_constraintVertical_bias="0.88" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

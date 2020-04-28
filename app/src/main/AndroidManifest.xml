@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GridItem"></activity>
+        <activity android:name=".OutfitDisplay"></activity>
+        <activity android:name=".GridItem" />
         <activity android:name=".itemSelection" />
         <activity android:name=".Createoutfit" />
         <activity android:name=".uploadItem" />

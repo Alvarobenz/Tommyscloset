@@ -9,14 +9,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -24,9 +31,21 @@ public class GridItem extends AppCompatActivity {
 
     TextView gridData;
     ImageView imageViewTop, imageViewBottom, imageViewAccessory, imageViewShoe;
+
     ChipGroup chipGroup1;
+
     List<String> outfitTagArray = new ArrayList<>();
     Chip chip1, chip2, chip3, chip4, chip5, chip6;
+
+    Button wearBtn;
+
+
+    // Firebase
+    FirebaseAuth fAuth;
+    FirebaseUser fUser;
+
+    String userID;
+
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -40,6 +59,7 @@ public class GridItem extends AppCompatActivity {
         imageViewShoe = findViewById(R.id.imageViewShoe);
         imageViewAccessory = findViewById(R.id.imageViewAccessory);
         chipGroup1 = findViewById(R.id.chipGroup1);
+        wearBtn = findViewById(R.id.wearBtn);
         chip1 = findViewById(R.id.chip1);
         chip2 = findViewById(R.id.chip2);
         chip3 = findViewById(R.id.chip3);
@@ -54,8 +74,54 @@ public class GridItem extends AppCompatActivity {
         String receivedImageBottom = intent.getStringExtra("imageBottom");
         String receivedImageShoe = intent.getStringExtra("imageShoe");
         String receivedImageAccessory = intent.getStringExtra("imageAccessory");
+
+        final String topNumber = intent.getStringExtra("topNumber");
+        final String bottomNumber = intent.getStringExtra("bottomNumber");
+        final String shoeNumber = intent.getStringExtra("shoeNumber");
+        final String accessoryNumber = intent.getStringExtra("accessoryNumber");
+
+
+        // init Firebase
+        fAuth = FirebaseAuth.getInstance();
+        fUser = fAuth.getCurrentUser();
+        assert fUser != null;
+        userID = fUser.getUid();
+
+
+
         assert bundle != null;
-        outfitTagArray =  (List<String>) bundle.getSerializable("outfitTagArray");
+        outfitTagArray =  (List<String>) bundle.getSerializable("outfitTagsArray");
+        try {
+            Log.d("outfitTag", " (2) outfitTag = " + outfitTagArray.size());
+
+        } catch(Exception e) {
+            Log.d("outfitTag", "outfitTag ERROR = IT'S EMPTY " );
+        }
+
+
+        wearBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                userID = fUser.getUid();
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+                DatabaseReference reference = database.getReference().child("Users").child(userID)
+                        .child("items");
+
+                reference.child(topNumber).child("Laundry").setValue("dirty");
+
+                reference.child(bottomNumber).child("Laundry").setValue("dirty");
+
+                reference.child(shoeNumber).child("Laundry").setValue("dirty");
+
+                reference.child(accessoryNumber).child("Laundry").setValue("dirty");
+
+                Toast.makeText(getApplicationContext(), "Items tagged as dirty", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
 
 
         gridData.setText(receivedName);

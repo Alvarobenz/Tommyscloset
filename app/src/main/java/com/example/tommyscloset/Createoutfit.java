@@ -261,8 +261,8 @@ public class Createoutfit extends AppCompatActivity {
                 hashMap.put("outfitName", outfitName);
                 hashMap.put("outfitNumber", outfitNumber);
 
-                // Firebase database instance
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
+
                 // Path to store user data named "Users/'userID'/items"
                 DatabaseReference reference = database.getReference().child("Users").child(userID)
                         .child("outfits").child(outfitNumber);
@@ -363,8 +363,6 @@ public class Createoutfit extends AppCompatActivity {
         });
 
     }
-
-
 
     // Put tags into tagArray that were selected
     private void chipTagsSelected(int chipsCount) {

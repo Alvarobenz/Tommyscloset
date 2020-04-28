@@ -59,7 +59,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public  void openGoingout(){
-        Intent intent = new Intent(this, ClothesuploadSelect.class  );
+        Intent intent = new Intent(this, Clothesselect.class  );
         startActivity(intent);
     }
 
@@ -74,7 +74,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public  void openLaundry(){
-        Intent intent = new Intent(this, ClothesuploadSelect.class  );
+        Intent intent = new Intent(this, Laundry.class  );
         startActivity(intent);
     }
 

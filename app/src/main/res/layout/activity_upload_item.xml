@@ -39,6 +39,9 @@
         android:id="@+id/buttonCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/mainmenu_logout"
+        android:textColor="@color/lightAccent"
+        android:textColorLink="@color/lightAccent"
         android:text="Create"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +69,7 @@
         android:layout_width="206dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:background="#A361CFBF"
+        android:background="@color/lightAccent"
         android:hint="              Item Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -101,7 +104,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="T-Shirt"
+            android:text="Shirt"
             android:textSize="5dp"
             app:chipMinTouchTargetSize="0dp"
             />
@@ -110,35 +113,35 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dress"
+            android:text="T-Shirt"
             app:chipMinTouchTargetSize="0dp"/>
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Oxford button-down"
+            android:text="Long Sleeve"
             app:chipMinTouchTargetSize="0dp"/>
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dress shirt"
+            android:text="Jersey"
             app:chipMinTouchTargetSize="0dp"/>
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cuban Short Sleeve"
+            android:text="Button down"
             app:chipMinTouchTargetSize="0dp"/>
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Overshirt"
+            android:text="Tank Top"
             app:chipMinTouchTargetSize="0dp"/>
 
         <com.google.android.material.chip.Chip
@@ -159,21 +162,21 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Denim shirt"
+            android:text="Shorts"
             app:chipMinTouchTargetSize="0dp"/>
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Classic short-sleeve"
+            android:text="Pannts"
             app:chipMinTouchTargetSize="0dp"/>
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Workout shirt"
+            android:text="Sweatpants"
             app:chipMinTouchTargetSize="0dp"/>
 
         <com.google.android.material.chip.Chip
@@ -187,13 +190,6 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Shorts"
-            app:chipMinTouchTargetSize="0dp"/>
-
-        <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Cargo"
             app:chipMinTouchTargetSize="0dp"/>
 
@@ -201,42 +197,7 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Workout pants"
-            app:chipMinTouchTargetSize="0dp"/>
-
-        <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Joggers"
-            app:chipMinTouchTargetSize="0dp"/>
-
-        <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sweats"
-            app:chipMinTouchTargetSize="0dp"/>
-
-        <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Khakis and Chinos"
-            app:chipMinTouchTargetSize="0dp"/>
-
-        <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Loafers"
-            app:chipMinTouchTargetSize="0dp"/>
-
-        <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sneakers"
+            android:text="Swim fit"
             app:chipMinTouchTargetSize="0dp"/>
 
         <com.google.android.material.chip.Chip
@@ -250,21 +211,63 @@
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bracelet"
+            android:text="Sneakers"
             app:chipMinTouchTargetSize="0dp"/>
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Watch"
+            android:text="Heels"
             app:chipMinTouchTargetSize="0dp"/>
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jacket"
+            android:text="Flip flops"
+            app:chipMinTouchTargetSize="0dp"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loafers"
+            app:chipMinTouchTargetSize="0dp"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Necklace"
+            app:chipMinTouchTargetSize="0dp"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wristband"
+            app:chipMinTouchTargetSize="0dp"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sunglasses"
+            app:chipMinTouchTargetSize="0dp"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Watches"
+            app:chipMinTouchTargetSize="0dp"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Earings"
             app:chipMinTouchTargetSize="0dp"/>
 
 

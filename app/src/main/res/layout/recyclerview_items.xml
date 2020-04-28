@@ -27,9 +27,9 @@
             android:id="@+id/imageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginStart="280dp"
             android:minWidth="100dp"
             android:minHeight="80dp"
-            android:layout_marginStart="280dp"
             app:srcCompat="@drawable/ic_launcher_foreground" />
 
         <LinearLayout
@@ -45,12 +45,6 @@
                 android:text="Name"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
-            <TextView
-                android:id="@+id/text_view_Number"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:text="Number: Rock"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
             <TextView
                 android:id="@+id/text_view_Type"

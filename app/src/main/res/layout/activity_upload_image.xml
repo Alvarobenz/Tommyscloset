@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".uploadImage">
 
+    <TextView
+        android:id="@+id/itemTypeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text=" 'Choose an Image for your Item' "
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/itemImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
     <ImageView
         android:id="@+id/displayImageView"
         android:layout_width="300dp"
@@ -24,6 +41,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="Camera"
+        android:background="@drawable/mainmenu_logout"
+        android:textColor="@color/lightAccent"
+        android:textColorLink="@color/lightAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +55,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Gallery"
+        android:background="@drawable/mainmenu_logout"
+        android:textColor="@color/lightAccent"
+        android:textColorLink="@color/lightAccent"
         app:layout_constraintBottom_toBottomOf="@+id/cameraBtn1"
         app:layout_constraintStart_toEndOf="@+id/cameraBtn1"
         app:layout_constraintTop_toTopOf="@+id/cameraBtn1" />
@@ -45,6 +68,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="172dp"
         android:text="Next"
+        android:background="@drawable/mainmenu_logout"
+        android:textColor="@color/lightAccent"
+        android:textColorLink="@color/lightAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -57,6 +83,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
         android:text="Upload from"
+        android:background="@drawable/mainmenu_logout"
+        android:textColor="@color/lightAccent"
+        android:textColorLink="@color/lightAccent"
         app:layout_constraintBottom_toTopOf="@+id/cameraBtn1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -56,7 +56,6 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.itemViewHolder
         List<String> tagArray1 = item.tags;
 
         holder.textViewName.setText(item.itemName);
-        holder.textViewNumber.setText("Number: " + item.itemNumber);
         holder.textViewType.setText("Type: " + item.itemType);
         Picasso.get().load(item.photoURL).into(holder.imageView);
         holder.buttonSelect.setOnClickListener(new View.OnClickListener() {
@@ -161,7 +160,7 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.itemViewHolder
 
     class itemViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewName, textViewNumber, textViewType;
+        TextView textViewName, textViewType;
         ImageView imageView;
         Button  buttonSelect;
         Chip chip1, chip2, chip3, chip4, chip5, chip6;
@@ -170,7 +169,6 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.itemViewHolder
             super(itemView);
 
             textViewName = itemView.findViewById(R.id.text_view_name);
-            textViewNumber = itemView.findViewById(R.id.text_view_Number);
             textViewType = itemView.findViewById(R.id.text_view_Type);
             imageView = itemView.findViewById(R.id.imageView);
             buttonSelect = itemView.findViewById(R.id.buttonSelect);

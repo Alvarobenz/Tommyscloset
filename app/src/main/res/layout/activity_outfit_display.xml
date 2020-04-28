@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gallery1"
+    android:background="@drawable/griditem1"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context=".Galleryview">
+    tools:context=".OutfitDisplay">
 
     <GridView
         android:id="@+id/gridview"

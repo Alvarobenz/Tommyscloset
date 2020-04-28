@@ -6,19 +6,28 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/homescreenbg"
+    android:background="@drawable/homescreen3"
     tools:context="com.example.tommyscloset.HomeActivity">
+
+    <ImageView
+        android:layout_width="295dp"
+        android:layout_height="166dp"
+        android:layout_gravity="top"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="-50dp"
+        android:layout_marginBottom="10dp"
+        app:srcCompat="@drawable/tclosetlogo" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:background="@drawable/mainmenu_button"
         android:minWidth="260dp"
         android:minHeight="80dp"
-        android:textAllCaps="false"
         android:text="Going out"
-        android:background="@drawable/mainmenu_button"
+        android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textColorLink="#B86DD8"
         android:textSize="24dp" />
@@ -56,14 +65,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:background="@drawable/mainmenu_button"
         android:minWidth="260dp"
         android:minHeight="80dp"
-        android:textAllCaps="false"
         android:text="Laundry"
-        android:background="@drawable/mainmenu_button"
+        android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textColorLink="#B86DD8"
-        android:textSize="24dp"/>
+        android:textSize="24dp" />
 
     <Button
         android:id="@+id/button5"
@@ -88,8 +97,8 @@
         android:minHeight="40dp"
         android:text="Logout"
         android:textAllCaps="false"
-        android:textColor="#DD2E9C"
-        android:textColorLink="#B86DD8"
+        android:textColor="@color/lightAccent"
+        android:textColorLink="@color/lightAccent"
         android:textSize="18sp"
         android:translationX="0dp"
         android:translationY="50dp" />
